@@ -6,6 +6,5 @@ The default port is 8080. To specify another port:
 
     python -m brython --server --port 8081
 
-Then load http://localhost:<port>/demo.html in the browser address bar.
+Then load http://localhost:<port>/index.html in the browser address bar.
 
-For more information please visit http://brython.info.
