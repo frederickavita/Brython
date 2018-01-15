@@ -42,3 +42,8 @@ font-family: cursive, 'myfont';
 color: lightslategray;
 
 }
+
+
+div#opacity {
+opacity: 0.0;
+}
