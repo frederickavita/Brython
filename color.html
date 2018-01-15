@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Color App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/single.css">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js" ></script>
+<script type="text/python" src="py/color.py"></script>
+<body onload="brython()">
+
+<!-- begin loading part-->
+<div id="loading" class="w3-display-middle w3-center" >
+ <h1>Loading...</h1>
+ <p><i class=" fa fa-spinner w3-spin"></i></p>
+</div>
+<!--end loading part-->
+
+<!-- begin container part-->
+<div id="container-1" class="w3-content w3-container w3-light-grey w3-center" style="max-width: 500px;display: none;">
+
+
+<h2 id="colortitle">Color</h2>
+<p class="w3-left-align">red:</p>
+<div style='background-color: red; width: {red * 100}%; height: 1em;'></div>
+
+<p class="w3-left-align">green:</p>
+<div style='background-color: green;width: {green * 100}%; height: 1em;'> </div>
+
+
+<p class="w3-left-align">blue:</p>
+<div style='background-color: blue; width: {blue * 100}%; height: 1em;'> </div>
+
+
+<p class="w3-left-align"><strong>result:</strong></p>
+<div style='background-color: rgb({round(red * 255)}, {round(green * 255)}, {round(blue * 255)});
+	     height: 1em;'> </div>
+
+</div>
+
+<!-- end loading part-->
