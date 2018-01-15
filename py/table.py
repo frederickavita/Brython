@@ -57,7 +57,6 @@ def update_value(ev, elt):
         item = product[0][0]
         price = product[0][1]
         quantity = product[0][2]
-    print(ev.target.value)
     app_tmpl.render(item=item,
                     price=price,
                     quantity=quantity,
