@@ -20,17 +20,34 @@ def format(n):
 
 b = country(country="The UK", population=format(63230000))
 
-
 appl_tmpl = Template(doc["container-1"])
 appl_tmpl.render(country=b['country'], population=b['population'])
 
 
+def country(name, climate, population, capital):
+    return {'name': name, 'climate': climate,
+            'population': population, 'capital': capital}
+
+
+b = country(name="The UK", climate={'temperature': 'cold', 'rainfall': 'excess'}, population=63230000,
+            capital={'name': 'London', "lat": 51.5171, 'lon': -0.1062})
+
+appl_tmpl = Template(doc["container-2"])
+
+appl_tmpl.render(country_name=b['name'],
+                 country_climate_temperature=b['climate']['temperature'],
+                 country_climate_rainfall=b['climate']['rainfall'],
+                 country_population=b['population'],
+                 country_capital_name=b['capital']['name'],
+                 country_capital_lat=b['capital']['lat'],
+                 country_capital_lon=b['capital']['lon'])
 
 
 def loading():
     """ hide loading id and show
     container-1  """
     doc['container-1'].style.display = "block"
+    doc['container-2'].style.display = "block"
     doc['loading'].style.display = "none"
 
 
