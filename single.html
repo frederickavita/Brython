@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Single App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/single.css">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js" ></script>
+<script type="text/python" src="py/single.py"></script>
+<body onload="brython()">
+
+<!-- begin loading part-->
+<div id="loading" class="w3-display-middle w3-center" >
+ <h1>Loading...</h1>
+ <p><i class=" fa fa-spinner w3-spin"></i></p>
+</div>
+<!--end loading part-->
+
+
+<!-- begin container-1 part-->
+<div id="container-1" class="w3-content w3-container w3-light-grey w3-center" style="max-width: 500px; display: none;">
+<p class="w3-xlarge">{greeting} {name}</p>
+</div>
+<!-- end loading part-->
+
+<!-- begin container-2 part-->
+<div id="container-2" class="w3-content w3-container w3-blue-grey w3-center" style="max-width: 500px;display: none;" >
+<p class="w3-xlarge">{greeting} {name}</p>
+</div>
+<!-- begin container-2 part-->
+
+
+</body>
+
+
