@@ -2,7 +2,7 @@
        src: url('../fonts/Graduate-Regular.ttf'); }
 
 
-h1 {
+h1,h2{
 font-family: 'myfont', cursive;
 
 }
@@ -15,5 +15,20 @@ display: block;
 
 i.fa.fa-spinner.w3-spin{
 font-size: 64px;
+
+}
+
+
+h2#colortitle{
+font-family: 'myfont', cursive;
+color: lightslategray;
+
+}
+
+
+p.w3-left-align{
+font-family: 'myfont', cursive;
+color: lightslategray;
+
 
 }
