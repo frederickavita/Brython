@@ -1,0 +1,19 @@
+@font-face { font-family: myfont;
+       src: url('../fonts/Graduate-Regular.ttf'); }
+
+
+h1 {
+font-family: 'myfont', cursive;
+
+}
+
+#loading{
+display: block;
+  color:lightslategrey
+}
+
+
+i.fa.fa-spinner.w3-spin{
+font-size: 64px;
+
+}
