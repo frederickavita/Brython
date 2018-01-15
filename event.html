@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>To do list brython</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/single.css">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js"></script>
+<script type="text/python" src="py/event.py"></script>
+<body onload="brython()">
+
+
+<!-- begin loading part-->
+<div id="loading" class="w3-display-middle w3-center" >
+ <h1>Loading...</h1>
+ <p><i class=" fa fa-spinner w3-spin"></i></p>
+</div>
+<!--end loading part-->
+
+<div id="opacity">
+<!-- begin container-1 part-->
+<div id="container-1" class="w3-content w3-container w3-light-grey w3-center w3-margin-top" style="max-width: 500px;">
+
+
+<button b-on="click:func_activate" class="w3-button w3-blue w3-hover-blue">{activate.upper()}</button>
+
+</div>
+<!-- end container-1 part-->
+
+
+<!-- begin container-2 part-->
+<div id="container-2" class="w3-content w3-container w3-light-grey w3-center w3-margin-top" style="max-width: 500px;">
+	<div>{number}</div>
+	<button b-on="click:decr" >-</button>
+	<button b-on="click:incr" >+</button>
+</div>
+<!-- end container-2 part-->
+
+
+
+<!-- begin container-3 part-->
+<div id="container-3" class="w3-content w3-container w3-light-grey w3-center w3-margin-top" style="max-width: 500px;">
+	<table>
+	  <tr>
+	    <th>Me</th><th>Sibling</th>
+	  </tr>
+	  <tr>
+	    <td>
+	        {number}
+	        <button b-on="click:incr">+</button><br/>
+	        <button b-on="click:rest">I'll miss you, cows</button>
+	    </td>
+	    <td>
+	        {number_2}
+	        <button b-on="click:incre" >+</button><br/>
+	        <button b-on="click:reste">Hah! You lost your cows</button>
+	    </td>
+	  </tr>
+	</table>
+</div>
+<!-- end container-3 part-->
+
+
+<!-- begin container-4 part-->
+<div id="container-4" class="w3-content w3-container w3-light-grey w3-center w3-margin-top" style="max-width: 500px;">
+<button b-on="click:activiate">Activate!</button>
+<button b-on="click:deactivate">Deactivate!</button>
+<button b-on="click:toogle">{silence}!</button>
+<button b-on="click:stop">Stop</button>
+</div>
+<!-- end container-4 part-->
+
+
+<!-- begin container-5 part-->
+<div id="container-5" class="w3-content w3-container w3-light-grey w3-center w3-margin-top" style="max-width: 500px;">
+<div id="signed" style="display: {non_1};">
+		<!-- message for signed-in users -->
+		<p>Welcome back, <b id="username">{username}!</b></p>
+</div>
+	<div id="nosigned" style="display: {non_2};">
+		<!-- message for non-signed-in users -->
+		<p>Hi there! Please <a b-on="click:prompt" href='#'>sign in</a></p>
+	</div>
+</div>
+<!-- end container-5 part-->
+</div>
+
