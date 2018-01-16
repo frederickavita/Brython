@@ -1,4 +1,4 @@
-To run the demo, start the built-in Python HTTP server by
+To run single.html , start the built-in Python HTTP server by
 
 python3 server.py
 
