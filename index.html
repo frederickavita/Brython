@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>To do list brython</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/single.css">
+<script type="text/javascript" src="brython.js"></script>
+
+<script type="text/javascript" src="brython_stdlib.js"></script>
+<script type="text/python" src="py/index.py"></script>
+<body onload="brython()">
+
+
+<!-- begin loading part-->
+<div id="loading" class="w3-display-middle w3-center" >
+ <h1>Loading...</h1>
+ <p><i class=" fa fa-spinner w3-spin"></i></p>
+</div>
+<!--end loading part-->
+
+<!-- begin content part-->
+<div id="index" class="w3-content w3-center w3-panel w3-light-grey" style="max-width: 500px;">
+<h1 class="w3-left-align w3-xlarge" id="app-1" style="font-family:myfont;">{name.title()}</h1>
+
+
+<!-- begin app-2 part-->
+<div id="app-2">
+
+<input b-on="keydown:create_task;blur:save_task;blur:show_task" class="w3-input w3-border" type="text" placeholder="What needs to be done ?" >
+
+</div>
+<!-- end app-2 part-->
+
+<!-- begin app-3 part-->
+<br>
+<div id="app-3" style="display:none; width: 100%;">
+
+</div>
+<!-- end app-3 part-->
+    
+
+</div>
+
+<!-- end content part-->
+</body>
+</html>
