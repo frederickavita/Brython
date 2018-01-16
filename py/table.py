@@ -1,15 +1,10 @@
 from browser import document as doc, window as win
 from browser.template import Template
 
-
-
 product = [["pint of milk", 0.19, 7],
            ['banane', 0.78, 3],
            ['orange', 0.25, 2],
            ['juice', 0.60, 1]]
-
-
-
 
 item = product[0][0]
 price = product[0][1]
@@ -60,15 +55,15 @@ def update_value(ev, elt):
     app_tmpl.render(item=item,
                     price=price,
                     quantity=quantity,
-                    total=formate(price,quantity))
+                    total=formate(price, quantity))
     doc['container-1'].style.display = "block"
     doc['container-2'].style.display = "block"""
 
 
-Template(doc["container-2"],[update_value]).render(item=item, price=price,
-                                    quantity=quantity,update="update random",
-                                    product=product,
-                                    total=formate(price, quantity))
+Template(doc["container-2"], [update_value]).render(item=item, price=price,
+                                                    quantity=quantity, update="update random",
+                                                    product=product,
+                                                    total=formate(price, quantity))
 
 
 def loading():
