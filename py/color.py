@@ -1,6 +1,7 @@
 from browser import document as doc, window as win
 from browser.template import Template
 
+
 Template(doc["container-1"]).render(red=0.45, green=0.61, blue=0.2)
 
 
