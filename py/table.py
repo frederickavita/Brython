@@ -1,6 +1,6 @@
 from browser import document as doc, window as win
 from browser.template import Template
-import random
+
 
 
 product = [["pint of milk", 0.19, 7],
