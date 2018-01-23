@@ -1,10 +1,34 @@
 from browser import document as doc, window as win, html
 from browser.local_storage import storage
 import json
+
 chat = []
 user = False
 chat_rec = ''
 check = False
+
+def show_button():
+    global check
+    print("aazazazaz")
+    if check:
+        doc['bar'].style.display = "block"
+    else:
+        doc['bar'].style.display = "none"
+
+
+@doc['remove'].bind("click")
+def remove(ev):
+    global check
+    del storage['chat']
+    check = False
+    show_button()
+    doc['controle'].innerHTML = ''
+
+
+@doc['reload'].bind("click")
+def reload(ev):
+    win.location.reload()
+
 
 def checking_chat():
     global chat_rec
@@ -22,17 +46,14 @@ def checking_chat():
             check = True
 
 
-
 checking_chat()
-
-
 
 
 def input(ev):
     global user
     global chat
     global check
-    global  chat_rec
+    global chat_rec
     if user:
         name = user
     else:
@@ -56,9 +77,7 @@ def input(ev):
             chat.append(text_chat)
             chat_rec = json.dumps(chat)
             storage['chat'] = chat_rec
-
-
-
+    show_button()
 
 
 doc['message'].bind("change", input)
@@ -67,11 +86,13 @@ doc['message'].bind("change", input)
 def loading():
     doc['loading'].style.display = "none"
     doc['container'].style.display = "block"
-
-
+    show_button()
 
 
 doc['welcome'].text = "Chatapp"
+
+
+
 
 
 
