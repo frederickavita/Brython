@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<title>Brython Chat Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/single.css">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js"></script>
+<body onload="brython()">
+
+
+
+
+
+<!-- begin loading part-->
+<div id="loading" class="w3-display-middle w3-center" >
+ <h1>Loading...</h1>
+ <p><i class=" fa fa-spinner w3-spin"></i></p>
+</div>
+<!--end loading part-->
+
+<div  id="container" style="display: none;">
+<h1 style="font-size: 32px;">Brython Chat App</h1>
+
+
+<p class="w3-xlarge" id="welcome"></p>
+
+
+<strong></strong>
+
+
+<p>Message: <input id="message"></p>
+    <div  id="controle"></div>
+
+
+
+</div>
+</body>
+
+</html>
+
+
+<style>
+
+html{
+padding:10px;
+font-family: Verdana, sans-serif;
+
+}
+
+
+.login-buttons-dropdown-align-right{
+ float: right;
+}
+
+
+</style>
+
+<script type="text/python" src="py/chat.py"></script>
