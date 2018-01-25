@@ -1,6 +1,7 @@
 from browser import document as doc, window as win
 
 
+
 def fade():
     return ('{animation:fading 10s infinite}@keyframes \n'
             'fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}')
@@ -36,21 +37,46 @@ def animatezoom():
             'animatezoom{from{transform:scale(0)} to{transform:scale(1)}}')
 
 
-def sheet(x,dom_type):
-    shee = doc.createElement('style')
-    if dom_type == 'id':
-        shee.innerHTML = "#" + x + animatezoom()
-    doc[x].appendChild(shee)
+animation = {'fade': fade(),
+             'opacity': opacity(),
+             'top': animatetop(),
+             'left': animateleft(),
+             'right': animateright(),
+             'bottom': animatebottom(),
+             'zoom': animatezoom()}
+
+
+def sheet(x, dom_type, type_animation):
+    if type_animation in animation:
+        shee = doc.createElement('style')
+        if dom_type == 'id':
+            shee.innerHTML = "#" + x + animation[type_animation]
+            doc[x].appendChild(shee)
+        elif dom_type == 'class':
+            shee.innerHTML = "." + x + animation[type_animation]
+            doc.body.appendChild(shee)
+    else:
+        print('module object has no attribute ' + type_animation)
 
 
 def search_div():
     data_animation = doc.querySelectorAll('[data-animation]')
-    for data in data_animation:
-        if data.id:
-            sheet(data.id,'id')
-        elif data.classList:
-            sheet(data)
-    doc['container'].style.display = "block"
+    if len(data_animation) != 0:
+        for data in data_animation:
+            if data.id:
+                sheet(data.id, 'id', data.dataset.animation)
+            elif data.className:
+                list_className = data.className.split()
+                sheet(list_className[0], 'class', data.dataset.animation)
+            else:
+                format_attribut = '{div}[data-animation*={anim}]'.format(div=data.localName,
+                                                                     anim=data.dataset.animation)
+                s = doc.querySelectorAll(format_attribut)
+                for x in s:
+                    if x.className == '':
+                        x.className = "brython-animation"
+                        sheet(x.className, 'class', data.dataset.animation)
+
 
 
 search_div()
